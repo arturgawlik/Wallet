@@ -94,7 +94,7 @@ namespace WalletDomain.Services.InMemory
 
             var updatedUser = users.FirstOrDefault();
 
-            if (updatedUser == user)
+            if (updatedUser.Equals(user))
             {
                 return false;
             }

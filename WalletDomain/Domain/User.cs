@@ -22,16 +22,5 @@ namespace WalletDomain
         {
             return Username.Equals(other.Username) && Email.Equals(other.Email) && Password.Equals(other.Password) && Id.Equals(other.Id);
         }
-
-
-        public static bool operator ==(User firstUser, User secondUser )
-        {
-            return firstUser.Equals(secondUser);
-        }
-
-        public static bool operator !=(User firstUser, User secondUser)
-        {
-            return !firstUser.Equals(secondUser);
-        }
     }
 }

@@ -43,13 +43,8 @@ namespace WalletDomain.Domain
             {
                 throw new EmailException("Email is null or whitespace");
             }
-
-            var emailRegex = new Regex("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
-
-            if (!emailRegex.IsMatch(newEmail))
-            {
-                throw new EmailException("Email is not match email regex");
-            }
+            
+            CheckEmailValidity(newEmail);
 
             Email = newEmail;
         }
@@ -62,6 +57,16 @@ namespace WalletDomain.Domain
             }
 
             Password = newPassword;
+        }
+
+        private static void CheckEmailValidity(string newEmail)
+        {
+            var emailRegex = new Regex("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
+
+            if (!emailRegex.IsMatch(newEmail))
+            {
+                throw new EmailException("Email is not match email regex");
+            }
         }
     }
 }

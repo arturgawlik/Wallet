@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet", "Wallet\Wallet.csproj", "{3554D958-06C0-4C06-AA86-429D891D4DA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletWeb", "Wallet\WalletWeb.csproj", "{3554D958-06C0-4C06-AA86-429D891D4DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletTest", "WalletTest\WalletTest.csproj", "{B6932069-6F37-4A2B-BF9B-0CEEF57B263D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletTest", "WalletTest\WalletTest.csproj", "{B6932069-6F37-4A2B-BF9B-0CEEF57B263D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletDomain", "WalletDomain\WalletDomain.csproj", "{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletDomain", "WalletDomain\WalletDomain.csproj", "{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

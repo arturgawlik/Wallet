@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WalletDomain.Domain;
 
 namespace WalletDomain.Services
 {

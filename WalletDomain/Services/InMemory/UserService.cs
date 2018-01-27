@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WalletDomain.Domain;
 
 namespace WalletDomain.Services.InMemory
 {
@@ -16,12 +17,7 @@ namespace WalletDomain.Services.InMemory
 
         public bool Add(User user)
         {
-            if (user == null)
-            {
-                return false;
-            }
-
-            if(string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
+            if(string.IsNullOrWhiteSpace(user?.Username) || string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
             {
                 return false;
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WalletDomain.Exceptions;
+using WalletDomain.Settings;
 
 namespace WalletDomain.Domain
 {
@@ -16,14 +17,15 @@ namespace WalletDomain.Domain
 
             Name = name;
             UserId = userId;
+            _allowDebit = WalletSettings.AllowDebit;
         }
 
-        private decimal state;
+        public decimal State { get; private set; }
         public string Name { get; private set; }
         public int UserId { get; private set; }
 
 
-        public bool AllowDebit { get; set; }
+        private bool _allowDebit;
         
 
         public void Add(decimal value)
@@ -38,12 +40,7 @@ namespace WalletDomain.Domain
                 return;
             }
 
-            state += value;
-        }
-
-        public decimal GetBalance()
-        {
-            throw new NotImplementedException();
+            State += value;
         }
 
         public void Substract(decimal value)
@@ -58,7 +55,17 @@ namespace WalletDomain.Domain
                 return;
             }
 
-            state -= value;
+            if (State - value < 0 && !_allowDebit)
+            {
+                throw new WalletNotEnoughtFundsException("Wallet state cant be smaller than 0 when options dont let that");
+            }
+
+            State -= value;
+        }
+
+        public void OverrideDebitOption(bool allowDebit)
+        {
+            _allowDebit = allowDebit;
         }
     }
 }

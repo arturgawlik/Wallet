@@ -6,6 +6,6 @@ namespace WalletDomain.Settings
 {
     public static class WalletSettings
     {
-        public static bool AllowDebit { get; set; }
+        public static bool AllowDebit = false;
     }
 }

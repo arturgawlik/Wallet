@@ -30,7 +30,7 @@ namespace WalletTest
 
             //Act
             wallet.Add(100);
-            var result = wallet.GetBalance();
+            var result = wallet.State;
 
             //Assert
             Assert.AreEqual(100, result);
@@ -46,7 +46,7 @@ namespace WalletTest
             //Act
             wallet.Add(100);
             wallet.Substract(50);
-            var result = wallet.GetBalance();
+            var result = wallet.State;
 
             //Assert
             Assert.AreEqual(50, result);
@@ -58,7 +58,7 @@ namespace WalletTest
             //Arrange
             var user = new User("Username", "email@email.com", "password");
             var wallet = new Wallet("WalletName", user.Id);
-            wallet.AllowDebit = false;
+            wallet.OverrideDebitOption(false);
 
             //Act Assert
             wallet.Add(100);
@@ -71,12 +71,12 @@ namespace WalletTest
             //Arrange
             var user = new User("Username", "email@email.com", "password");
             var wallet = new Wallet("WalletName", user.Id);
-            wallet.AllowDebit = true;
+            wallet.OverrideDebitOption(true);
 
             //Act Assert
             wallet.Add(100);
             wallet.Substract(120);
-            var result = wallet.GetBalance();
+            var result = wallet.State;
 
             //Assert
             Assert.AreEqual(-20, result);

@@ -62,7 +62,7 @@ namespace WalletDomain.Services.Services
             }
 
             _context.Wallets.Remove(wallet);
-            _context.SaveChanges
+            _context.SaveChanges();
         }
 
         public void OverrideDebitOption(int walletId, bool allowDebit)

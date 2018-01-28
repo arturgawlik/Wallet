@@ -17,15 +17,16 @@ namespace WalletDomain.Domain
 
             Name = name;
             UserId = userId;
-            _allowDebit = WalletSettings.AllowDebit;
+            AllowDebit = WalletSettings.AllowDebit;
         }
 
+        public int Id { get; private set; }
         public decimal State { get; private set; }
         public string Name { get; private set; }
         public int UserId { get; private set; }
 
 
-        private bool _allowDebit;
+        public bool AllowDebit { get; set; }
         
 
         public void Add(decimal value)
@@ -55,7 +56,7 @@ namespace WalletDomain.Domain
                 return;
             }
 
-            if (State - value < 0 && !_allowDebit)
+            if (State - value < 0 && !AllowDebit)
             {
                 throw new WalletNotEnoughtFundsException("Wallet state cant be smaller than 0 when options dont let that");
             }
@@ -65,7 +66,7 @@ namespace WalletDomain.Domain
 
         public void OverrideDebitOption(bool allowDebit)
         {
-            _allowDebit = allowDebit;
+            AllowDebit = allowDebit;
         }
     }
 }

@@ -10,13 +10,12 @@ namespace WalletDomain.Domain
         
         public User(string username, string email, string password)
         {
-            Id = ++ _idCounter;
             SetUsername(username);
             SetEmail(email);
             SetPassword(password);
         }
 
-        public int Id { get; }
+        public int Id { get; private set; }
         public string Username { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }

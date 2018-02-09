@@ -23,6 +23,10 @@ namespace WalletDomain.Services.Services
             {
                 throw new WalletException($"Amount is equal: {amount}, when it can not be smaller than zero.");
             }
+            if (amount == 0)
+            {
+                return;
+            }
             if (walletId <= 0)
             {
                 throw new WalletException($"walletId is equal: {walletId}, when it can not be samller or equal to zero.");
@@ -104,6 +108,12 @@ namespace WalletDomain.Services.Services
             }
 
             var wallet = _context.Wallets.FirstOrDefault(w => w.Id == walletId);
+
+            if (wallet == null)
+            {
+                throw new WalletException("wallet object is null.");
+            }
+
             wallet.Substract(amount);
 
             _context.Wallets.Update(wallet);

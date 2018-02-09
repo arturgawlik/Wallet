@@ -7,10 +7,12 @@ namespace WalletDomain.Services.Interfaces
 {
     public interface IWalletService
     {
-        Wallet Create(string name, int userId);
+        Wallet Create(Wallet wallet);
         void Delete(int Id);
         void Add(int walletId, decimal amount);
         void Substract(int walletId, decimal deciaml);
         void OverrideDebitOption(int walletId, bool allowDebit);
+        IList<Wallet> GetWalletsByUserId(int userId);
+        Wallet GetWalletById(int id);
     }
 }

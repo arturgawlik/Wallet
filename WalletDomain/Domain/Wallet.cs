@@ -10,11 +10,6 @@ namespace WalletDomain.Domain
     {
         public Wallet(string name, int userId)
         {
-            if (userId <= 0)
-            {
-                throw new WalletException("UserId cant be smallet or equal to zero when new wallet is creating");
-            }
-
             Name = name;
             UserId = userId;
             AllowDebit = WalletSettings.AllowDebit;

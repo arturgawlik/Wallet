@@ -13,4 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WalletDomain\WalletDomain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
 </Project>

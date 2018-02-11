@@ -11,7 +11,7 @@ using WalletDomain.DB;
 namespace WalletDomain.Migrations
 {
     [DbContext(typeof(WalletContext))]
-    [Migration("20180211170323_Initial-Migration")]
+    [Migration("20180211173454_Initial-Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

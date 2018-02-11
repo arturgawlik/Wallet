@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,13 +37,13 @@ namespace WalletDomain.Services.Services
 
             _context.Wallets.Update(wallet);
 
-            _context.BulkSaveChanges();
+            _context.SaveChanges();
         }
 
         public Wallet Create(Wallet wallet)
         {
             var createdWallet = _context.Wallets.Add(wallet);
-            _context.BulkSaveChanges();
+            _context.SaveChanges();
 
             return createdWallet.Entity;
         }
@@ -63,7 +63,7 @@ namespace WalletDomain.Services.Services
             }
 
             _context.Wallets.Remove(wallet);
-            _context.BulkSaveChanges();
+            _context.SaveChanges();
         }
 
         public Wallet GetWalletById(int id)
@@ -93,7 +93,7 @@ namespace WalletDomain.Services.Services
             wallet.AllowDebit = allowDebit;
 
             _context.Wallets.Update(wallet);
-            _context.BulkSaveChanges();
+            _context.SaveChanges();
         }
 
         public void Substract(int walletId, decimal amount)
@@ -118,7 +118,7 @@ namespace WalletDomain.Services.Services
 
             _context.Wallets.Update(wallet);
 
-            _context.BulkSaveChanges();
+            _context.SaveChanges();
         }
     }
 }

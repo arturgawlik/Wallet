@@ -6,7 +6,6 @@ namespace WalletDomain.Domain
 {
     public class User : IEquatable<User>
     {
-        private static int _idCounter = 0;
         
         public User(string username, string email, string password)
         {

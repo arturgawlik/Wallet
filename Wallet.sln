@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletTest", "WalletTest\WalletTest.csproj", "{B6932069-6F37-4A2B-BF9B-0CEEF57B263D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletDomain", "WalletDomain\WalletDomain.csproj", "{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletWeb", "WalletWeb\WalletWeb.csproj", "{5A0CA76A-6AD2-4449-BC2E-BA66E2CC00A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletWeb", "WalletWeb\WalletWeb.csproj", "{EBE45A3C-A8BD-4885-84B8-96558578EBAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A0CA76A-6AD2-4449-BC2E-BA66E2CC00A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A0CA76A-6AD2-4449-BC2E-BA66E2CC00A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A0CA76A-6AD2-4449-BC2E-BA66E2CC00A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A0CA76A-6AD2-4449-BC2E-BA66E2CC00A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE45A3C-A8BD-4885-84B8-96558578EBAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE45A3C-A8BD-4885-84B8-96558578EBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE45A3C-A8BD-4885-84B8-96558578EBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE45A3C-A8BD-4885-84B8-96558578EBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

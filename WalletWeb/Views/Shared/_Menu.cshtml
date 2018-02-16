@@ -1,0 +1,821 @@
+<!-- SIDEBAR - START -->
+<div class="page-sidebar @(" " + (ViewData["mainmenu_scroll"] == "fixedscroll" ? @ViewData["mainmenu_scroll"] : "pagescroll" )) @ViewData["pagesidebar_class"]">
+
+    <!-- MAIN MENU - START -->
+    <div class="page-sidebar-wrapper" id="main-menu-wrapper"> 
+
+        <!-- USER INFO - START -->
+        <div class="profile-info row">
+
+            <div class="profile-image col-xs-4">
+                <a href="ui-profile.php">
+                    <img alt="" src="~/data/profile/profile.jpg" class="img-responsive img-circle">
+                </a>
+            </div>
+
+            <div class="profile-details col-xs-8">
+
+                <h3>
+                    <a href="ui-profile.php">Shane Taylor</a>
+
+                    <!-- Available statuses: online, idle, busy, away and offline -->
+                    <span class="profile-status online"></span>
+                </h3>
+
+                <p class="profile-title">Web Developer</p>
+
+            </div>
+
+        </div>
+        <!-- USER INFO - END -->
+
+
+
+<ul class='wraplist'>   
+
+            <li class='menusection'>Main</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Dashboard" ? "open" : "" )"> 
+                    <a href="@Url.Action("Index", "Dashboard")">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Layouts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-columns"></i>
+                    <span class="title">Layouts</span>
+                        <span class="arrow open"></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Layouts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutDefault" ? "active" : "" ))" href="@Url.Action("LayoutDefault", "Layouts")" >Default Layout</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutCollapsed" ? "active" : "" ))" href="@Url.Action("LayoutCollapsed", "Layouts")" >Collapsed Menu</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutChat" ? "active" : "" ))" href="@Url.Action("LayoutChat", "Layouts")" >Chat Open</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutBoxed" ? "active" : "" ))" href="@Url.Action("LayoutBoxed", "Layouts")" >Boxed Layout</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutBoxedCollapsed" ? "active" : "" ))" href="@Url.Action("LayoutBoxedCollapsed", "Layouts")" >Boxed Collapsed Menu</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Layouts/LayoutBoxedChat" ? "active" : "" ))" href="@Url.Action("LayoutBoxedChat", "Layouts")" >Boxed Chat Open</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>Applications</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Calendar" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiCalendar", "Calendar")">
+                    <i class="fa fa-calendar"></i>
+                    <span class="title">Calendar</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Mailbox" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span class="title">Mailbox</span>
+                        <span class="arrow "></span><span class="label label-accent">4</span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Mailbox" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Mailbox/MailInbox" ? "active" : "" ))" href="@Url.Action("MailInbox", "Mailbox")" >Inbox</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Mailbox/MailCompose" ? "active" : "" ))" href="@Url.Action("MailCompose", "Mailbox")" >Compose</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Mailbox/MailView" ? "active" : "" ))" href="@Url.Action("MailView", "Mailbox")" >View</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "ChatAPI" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-comments"></i>
+                    <span class="title">Chat API</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "ChatAPI" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChatAPI/ChatApi" ? "active" : "" ))" href="@Url.Action("ChatApi", "ChatAPI")" >Chat API</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChatAPI/ChatWindows" ? "active" : "" ))" href="@Url.Action("ChatWindows", "ChatAPI")" >Chat Windows</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Widgets" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span class="title">Widgets</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Widgets" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetMisc" ? "active" : "" ))" href="@Url.Action("WidgetMisc", "Widgets")" >Miscellaneous</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetTilesCounter" ? "active" : "" ))" href="@Url.Action("WidgetTilesCounter", "Widgets")" >Counter Tiles</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetTilesProgress" ? "active" : "" ))" href="@Url.Action("WidgetTilesProgress", "Widgets")" >Progress Tiles</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetSocialmedia" ? "active" : "" ))" href="@Url.Action("WidgetSocialmedia", "Widgets")" >Social Media</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetGraphs" ? "active" : "" ))" href="@Url.Action("WidgetGraphs", "Widgets")" >Graphs</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Widgets/WidgetTodo" ? "active" : "" ))" href="@Url.Action("WidgetTodo", "Widgets")" >To Do Tasks</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>Data Visualization</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Echarts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-bar-chart"></i>
+                    <span class="title">Echarts</span>
+                        <span class="arrow "></span><span class="label label-accent">HOT</span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Echarts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Echarts/ChartsEchartLine" ? "active" : "" ))" href="@Url.Action("ChartsEchartLine", "Echarts")" >Line & Area Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Echarts/ChartsEchartBar" ? "active" : "" ))" href="@Url.Action("ChartsEchartBar", "Echarts")" >Bar & Stacked Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Echarts/ChartsEchartScatter" ? "active" : "" ))" href="@Url.Action("ChartsEchartScatter", "Echarts")" >Scatter Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Echarts/ChartsEchartPie" ? "active" : "" ))" href="@Url.Action("ChartsEchartPie", "Echarts")" >Pie Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Echarts/ChartsEchartGauge" ? "active" : "" ))" href="@Url.Action("ChartsEchartGauge", "Echarts")" >Gauge Charts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "MorrisCharts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-area-chart"></i>
+                    <span class="title">Morris Charts</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "MorrisCharts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/MorrisCharts/ChartsMorrisLine" ? "active" : "" ))" href="@Url.Action("ChartsMorrisLine", "MorrisCharts")" >Line Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/MorrisCharts/ChartsMorrisBar" ? "active" : "" ))" href="@Url.Action("ChartsMorrisBar", "MorrisCharts")" >Bar & Stacked Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/MorrisCharts/ChartsMorrisArea" ? "active" : "" ))" href="@Url.Action("ChartsMorrisArea", "MorrisCharts")" >Area Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/MorrisCharts/ChartsMorrisPie" ? "active" : "" ))" href="@Url.Action("ChartsMorrisPie", "MorrisCharts")" >Pie Charts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "ChartsJS" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-line-chart"></i>
+                    <span class="title">Charts JS</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "ChartsJS" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChartsJS/ChartsChartjsLine" ? "active" : "" ))" href="@Url.Action("ChartsChartjsLine", "ChartsJS")" >Line Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChartsJS/ChartsChartjsBar" ? "active" : "" ))" href="@Url.Action("ChartsChartjsBar", "ChartsJS")" >Bar Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChartsJS/ChartsChartjsPolarRadar" ? "active" : "" ))" href="@Url.Action("ChartsChartjsPolarRadar", "ChartsJS")" >Polar & Radar</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ChartsJS/ChartsChartjsPieDonut" ? "active" : "" ))" href="@Url.Action("ChartsChartjsPieDonut", "ChartsJS")" >Pie & Donut</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FlotCharts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-bar-chart"></i>
+                    <span class="title">Flot Charts</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FlotCharts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotStacked" ? "active" : "" ))" href="@Url.Action("ChartsFlotStacked", "FlotCharts")" >Stacked Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotArea" ? "active" : "" ))" href="@Url.Action("ChartsFlotArea", "FlotCharts")" >Area Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotExtensions" ? "active" : "" ))" href="@Url.Action("ChartsFlotExtensions", "FlotCharts")" >Flot Extensions</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotCombined" ? "active" : "" ))" href="@Url.Action("ChartsFlotCombined", "FlotCharts")" >Combined Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotLine" ? "active" : "" ))" href="@Url.Action("ChartsFlotLine", "FlotCharts")" >Line Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FlotCharts/ChartsFlotPie" ? "active" : "" ))" href="@Url.Action("ChartsFlotPie", "FlotCharts")" >Pie Charts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "SparklineCharts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-line-chart"></i>
+                    <span class="title">Sparkline Charts</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "SparklineCharts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SparklineCharts/ChartsSparklineLine" ? "active" : "" ))" href="@Url.Action("ChartsSparklineLine", "SparklineCharts")" >Line & Area Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SparklineCharts/ChartsSparklineBar" ? "active" : "" ))" href="@Url.Action("ChartsSparklineBar", "SparklineCharts")" >Bar Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SparklineCharts/ChartsSparklineComposite" ? "active" : "" ))" href="@Url.Action("ChartsSparklineComposite", "SparklineCharts")" >Composite Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SparklineCharts/ChartsSparklineOther" ? "active" : "" ))" href="@Url.Action("ChartsSparklineOther", "SparklineCharts")" >Other Charts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "EasyPieCharts" ? "open" : "" )"> 
+                    <a href="@Url.Action("ChartsEasypiechart", "EasyPieCharts")">
+                    <i class="fa fa-pie-chart"></i>
+                    <span class="title">Easy Pie Charts</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "KnobsCharts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-circle-o-notch"></i>
+                    <span class="title">Knobs Charts</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "KnobsCharts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/KnobsCharts/ChartsKnobs" ? "active" : "" ))" href="@Url.Action("ChartsKnobs", "KnobsCharts")" >Knobs</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/KnobsCharts/ChartsKnobsClock" ? "active" : "" ))" href="@Url.Action("ChartsKnobsClock", "KnobsCharts")" >Knob Clock</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "RickshawCharts" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-area-chart"></i>
+                    <span class="title">Rickshaw Charts</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "RickshawCharts" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/RickshawCharts/ChartsRickshawExtensions" ? "active" : "" ))" href="@Url.Action("ChartsRickshawExtensions", "RickshawCharts")" >Extensions</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/RickshawCharts/ChartsRickshawScatter" ? "active" : "" ))" href="@Url.Action("ChartsRickshawScatter", "RickshawCharts")" >Scatter Charts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/RickshawCharts/ChartsRickshawMilliseconds" ? "active" : "" ))" href="@Url.Action("ChartsRickshawMilliseconds", "RickshawCharts")" >Millisecond Charts</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>Forms</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormElements" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-check-square-o"></i>
+                    <span class="title">Form Elements</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FormElements" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormElements/FormElements" ? "active" : "" ))" href="@Url.Action("FormElements", "FormElements")" >Field Elements</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormElements/FormElementsPremade" ? "active" : "" ))" href="@Url.Action("FormElementsPremade", "FormElements")" >Pre Made Forms</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormElements/FormElementsIcheck" ? "active" : "" ))" href="@Url.Action("FormElementsIcheck", "FormElements")" >Checkbox & Radio</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormElements/FormElementsGrid" ? "active" : "" ))" href="@Url.Action("FormElementsGrid", "FormElements")" >Form Grid</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormComponents" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-sliders"></i>
+                    <span class="title">Form Components</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FormComponents" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsDatepicker" ? "active" : "" ))" href="@Url.Action("FormComponentsDatepicker", "FormComponents")" >Date picker</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsTimepicker" ? "active" : "" ))" href="@Url.Action("FormComponentsTimepicker", "FormComponents")" >Time picker</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsDaterange" ? "active" : "" ))" href="@Url.Action("FormComponentsDaterange", "FormComponents")" >Date Range</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsColorpicker" ? "active" : "" ))" href="@Url.Action("FormComponentsColorpicker", "FormComponents")" >Color picker</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsSpinners" ? "active" : "" ))" href="@Url.Action("FormComponentsSpinners", "FormComponents")" >Spinners</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsTagsinput" ? "active" : "" ))" href="@Url.Action("FormComponentsTagsinput", "FormComponents")" >Tags Input</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsSwitches" ? "active" : "" ))" href="@Url.Action("FormComponentsSwitches", "FormComponents")" >Switches</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsSliders" ? "active" : "" ))" href="@Url.Action("FormComponentsSliders", "FormComponents")" >Sliders</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsSelect2" ? "active" : "" ))" href="@Url.Action("FormComponentsSelect2", "FormComponents")" >Select2</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsTypeahead" ? "active" : "" ))" href="@Url.Action("FormComponentsTypeahead", "FormComponents")" >Typeahead</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormComponents/FormComponentsMultiselect" ? "active" : "" ))" href="@Url.Action("FormComponentsMultiselect", "FormComponents")" >Multi Select</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormWizard" ? "open" : "" )"> 
+                    <a href="@Url.Action("FormWizard", "FormWizard")">
+                    <i class="fa fa-dot-circle-o"></i>
+                    <span class="title">Form Wizard</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormValidations" ? "open" : "" )"> 
+                    <a href="@Url.Action("FormValidation", "FormValidations")">
+                    <i class="fa fa-warning"></i>
+                    <span class="title">Form Validations</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormEditors" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-text-width"></i>
+                    <span class="title">Form Editors</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FormEditors" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormEditors/FormEditorsBootstrap" ? "active" : "" ))" href="@Url.Action("FormEditorsBootstrap", "FormEditors")" >Bootstrap WYSIHTML5</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormEditors/FormEditorsCkeditor" ? "active" : "" ))" href="@Url.Action("FormEditorsCkeditor", "FormEditors")" >Ckeditor</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormEditors/FormEditorsInline" ? "active" : "" ))" href="@Url.Action("FormEditorsInline", "FormEditors")" >Inline editor</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormEditors/FormEditorsMarkdown" ? "active" : "" ))" href="@Url.Action("FormEditorsMarkdown", "FormEditors")" >Markdown editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FormMask" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-terminal"></i>
+                    <span class="title">Form Mask</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FormMask" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormMask/FormMasksInput" ? "active" : "" ))" href="@Url.Action("FormMasksInput", "FormMask")" >Input Masks</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FormMask/FormMasksAutonumeric" ? "active" : "" ))" href="@Url.Action("FormMasksAutonumeric", "FormMask")" >Autonumeric</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>Page Kits</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "AccessPages" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-lock"></i>
+                    <span class="title">Access Pages</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "AccessPages" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/AccessPages/UiLogin" ? "active" : "" ))" href="@Url.Action("UiLogin", "AccessPages")" >Login</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/AccessPages/UiLockscreen" ? "active" : "" ))" href="@Url.Action("UiLockscreen", "AccessPages")" >Lock Screen</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/AccessPages/UiRegister" ? "active" : "" ))" href="@Url.Action("UiRegister", "AccessPages")" >Registration</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "ErrorPages" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-warning"></i>
+                    <span class="title">Error Pages</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "ErrorPages" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui403" ? "active" : "" ))" href="@Url.Action("Ui403", "ErrorPages")" >403</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui404" ? "active" : "" ))" href="@Url.Action("Ui404", "ErrorPages")" >404</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui405" ? "active" : "" ))" href="@Url.Action("Ui405", "ErrorPages")" >405</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui408" ? "active" : "" ))" href="@Url.Action("Ui408", "ErrorPages")" >408</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui500" ? "active" : "" ))" href="@Url.Action("Ui500", "ErrorPages")" >500</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/Ui503" ? "active" : "" ))" href="@Url.Action("Ui503", "ErrorPages")" >503</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/ErrorPages/UiOffline" ? "active" : "" ))" href="@Url.Action("UiOffline", "ErrorPages")" >Offline</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "BlogAndSearch" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-edit"></i>
+                    <span class="title">Blog & Search</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "BlogAndSearch" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/BlogAndSearch/UiBlogs" ? "active" : "" ))" href="@Url.Action("UiBlogs", "BlogAndSearch")" >Blogs</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/BlogAndSearch/UiSearch" ? "active" : "" ))" href="@Url.Action("UiSearch", "BlogAndSearch")" >Search</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/BlogAndSearch/UiBlogItem" ? "active" : "" ))" href="@Url.Action("UiBlogItem", "BlogAndSearch")" >Single Blog</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "SocialMedia" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-share-alt"></i>
+                    <span class="title">Social Media</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "SocialMedia" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SocialMedia/UiProfile" ? "active" : "" ))" href="@Url.Action("UiProfile", "SocialMedia")" >User Profile</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/SocialMedia/UiMembers" ? "active" : "" ))" href="@Url.Action("UiMembers", "SocialMedia")" >Members</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Gallery" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span class="title">Gallery</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Gallery" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery2col" ? "active" : "" ))" href="@Url.Action("UiGallery2col", "Gallery")" >2 Column Grid</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery3col" ? "active" : "" ))" href="@Url.Action("UiGallery3col", "Gallery")" >3 Column Grid</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery4col" ? "active" : "" ))" href="@Url.Action("UiGallery4col", "Gallery")" >4 Column Grid</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery3colMasonry" ? "active" : "" ))" href="@Url.Action("UiGallery3colMasonry", "Gallery")" >3 Column Masonry</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery4colMasonry" ? "active" : "" ))" href="@Url.Action("UiGallery4colMasonry", "Gallery")" >4 Column Masonry</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery2colOutside" ? "active" : "" ))" href="@Url.Action("UiGallery2colOutside", "Gallery")" >2 Column with title</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery3colOutside" ? "active" : "" ))" href="@Url.Action("UiGallery3colOutside", "Gallery")" >3 Column with title</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Gallery/UiGallery4colOutside" ? "active" : "" ))" href="@Url.Action("UiGallery4colOutside", "Gallery")" >4 Column with title</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Timeline" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <span class="title">Timeline</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Timeline" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Timeline/UiTimelineCentered" ? "active" : "" ))" href="@Url.Action("UiTimelineCentered", "Timeline")" >Centered timeline</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Timeline/UiTimelineLeft" ? "active" : "" ))" href="@Url.Action("UiTimelineLeft", "Timeline")" >Left Aligned timeline</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Support" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-question-circle"></i>
+                    <span class="title">Support</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Support" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Support/UiFaq" ? "active" : "" ))" href="@Url.Action("UiFaq", "Support")" >FAQ</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Support/UiTocify" ? "active" : "" ))" href="@Url.Action("UiTocify", "Support")" >Documentation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "PricingTables" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-dollar"></i>
+                    <span class="title">Pricing Tables</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "PricingTables" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/PricingTables/UiPricingExpanded" ? "active" : "" ))" href="@Url.Action("UiPricingExpanded", "PricingTables")" >Expanded</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/PricingTables/UiPricingNarrow" ? "active" : "" ))" href="@Url.Action("UiPricingNarrow", "PricingTables")" >Narrow</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Invoicing" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-money"></i>
+                    <span class="title">Invoicing</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Invoicing" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Invoicing/UiInvoice" ? "active" : "" ))" href="@Url.Action("UiInvoice", "Invoicing")" >Invoice</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Invoicing/UiInvoiceList" ? "active" : "" ))" href="@Url.Action("UiInvoiceList", "Invoicing")" >Invoice Listing</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Invoicing/UiInvoiceAdd" ? "active" : "" ))" href="@Url.Action("UiInvoiceAdd", "Invoicing")" >Invoice Add</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Invoicing/UiInvoiceEdit" ? "active" : "" ))" href="@Url.Action("UiInvoiceEdit", "Invoicing")" >Invoice Edit</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>User Interface</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Components" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span class="title">Components</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Components" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiTabs" ? "active" : "" ))" href="@Url.Action("UiTabs", "Components")" >Tabs</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiAccordion" ? "active" : "" ))" href="@Url.Action("UiAccordion", "Components")" >Accordions</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiProgress" ? "active" : "" ))" href="@Url.Action("UiProgress", "Components")" >Progress Bars</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiButtons" ? "active" : "" ))" href="@Url.Action("UiButtons", "Components")" >Buttons</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiModals" ? "active" : "" ))" href="@Url.Action("UiModals", "Components")" >Modals</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiAlerts" ? "active" : "" ))" href="@Url.Action("UiAlerts", "Components")" >Alerts</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiNotifications" ? "active" : "" ))" href="@Url.Action("UiNotifications", "Components")" >Notifications</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiTooltips" ? "active" : "" ))" href="@Url.Action("UiTooltips", "Components")" >Tooltips</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiPopovers" ? "active" : "" ))" href="@Url.Action("UiPopovers", "Components")" >Popovers</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiNavbars" ? "active" : "" ))" href="@Url.Action("UiNavbars", "Components")" >Navbars</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiDropdowns" ? "active" : "" ))" href="@Url.Action("UiDropdowns", "Components")" >Dropdowns</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiCarousel" ? "active" : "" ))" href="@Url.Action("UiCarousel", "Components")" >Carousel Slider</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiTree" ? "active" : "" ))" href="@Url.Action("UiTree", "Components")" >Tree</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiBreadcrumbs" ? "active" : "" ))" href="@Url.Action("UiBreadcrumbs", "Components")" >Breadcrumbs</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiPagination" ? "active" : "" ))" href="@Url.Action("UiPagination", "Components")" >Pagination</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Components/UiLabelsBadges" ? "active" : "" ))" href="@Url.Action("UiLabelsBadges", "Components")" >Labels & Badges</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Appearance" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-th-large"></i>
+                    <span class="title">Appearance</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Appearance" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiTypography" ? "active" : "" ))" href="@Url.Action("UiTypography", "Appearance")" >Typography</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiGrids" ? "active" : "" ))" href="@Url.Action("UiGrids", "Appearance")" >Grids</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiPanels" ? "active" : "" ))" href="@Url.Action("UiPanels", "Appearance")" >Draggable Panels</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiEmbeds" ? "active" : "" ))" href="@Url.Action("UiEmbeds", "Appearance")" >Video Embeds</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiCode" ? "active" : "" ))" href="@Url.Action("UiCode", "Appearance")" >Code styles</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiGroupList" ? "active" : "" ))" href="@Url.Action("UiGroupList", "Appearance")" >Group Listing</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Appearance/UiResponsiveImages" ? "active" : "" ))" href="@Url.Action("UiResponsiveImages", "Appearance")" >Responsive Images</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "IconSets" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-thumbs-up"></i>
+                    <span class="title">Icon Sets</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "IconSets" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/IconSets/UiIcons" ? "active" : "" ))" href="@Url.Action("UiIcons", "IconSets")" >Icon Styles</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/IconSets/UiFontawesome" ? "active" : "" ))" href="@Url.Action("UiFontawesome", "IconSets")" >Font Awesome</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/IconSets/UiGlyphicons" ? "active" : "" ))" href="@Url.Action("UiGlyphicons", "IconSets")" >Glyph Icons</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Tables" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-table"></i>
+                    <span class="title">Tables</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Tables" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Tables/TablesBasic" ? "active" : "" ))" href="@Url.Action("TablesBasic", "Tables")" >Basic tables</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Tables/TablesData" ? "active" : "" ))" href="@Url.Action("TablesData", "Tables")" >Data Tables</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Tables/TablesResponsive" ? "active" : "" ))" href="@Url.Action("TablesResponsive", "Tables")" >Responsive Tables</a>
+                            </li>
+                        </ul>
+                    </li><li class='menusection'>Maps</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "VectorWorldMap" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiVectormaps", "VectorWorldMap")">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="title">Vector World Map</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "VectorCountryMaps" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiVectormapsCountries", "VectorCountryMaps")">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="title">Vector Country Maps</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "GoogleMaps" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiGooglemaps", "GoogleMaps")">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="title">Google Maps</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "GoogleMapSearchAPI" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiGooglemapfull", "GoogleMapSearchAPI")">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="title">Google Map Search API</span>
+                        </a>
+                    </li><li class='menusection'>Extensions</li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "ImageCropper" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiImagecrop", "ImageCropper")">
+                    <i class="fa fa-file-image-o"></i>
+                    <span class="title">Image Cropper</span>
+                        </a>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "FileUploader" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-upload"></i>
+                    <span class="title">File Uploader</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "FileUploader" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FileUploader/FormFileuploadDropzone" ? "active" : "" ))" href="@Url.Action("FormFileuploadDropzone", "FileUploader")" >DropZone (Drag & Drop)</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/FileUploader/FormFileuploadCustom" ? "active" : "" ))" href="@Url.Action("FormFileuploadCustom", "FileUploader")" >Custom Uploader</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "Datatables" ? "open" : "" )"> 
+                    <a href="javascript:;">
+                    <i class="fa fa-table"></i>
+                    <span class="title">Datatables</span>
+                        <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu" style="@("" + (ViewContext.RouteData.Values["controller"]) == "Datatables" ? "display:block" : "" )">
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Datatables/TablesDataBasic" ? "active" : "" ))" href="@Url.Action("TablesDataBasic", "Datatables")" >Basic Datatables</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Datatables/TablesDataCollapsedrow" ? "active" : "" ))" href="@Url.Action("TablesDataCollapsedrow", "Datatables")" >Collapsed Rows</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Datatables/TablesDataDownload" ? "active" : "" ))" href="@Url.Action("TablesDataDownload", "Datatables")" >Download Formats</a>
+                            </li>
+                            <li>
+                            <a class="@("" + (Url.RouteUrl(ViewContext.RouteData.Values) == "/Datatables/TablesDataComplexheader" ? "active" : "" ))" href="@Url.Action("TablesDataComplexheader", "Datatables")" >Complex Headers</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@("" + (ViewContext.RouteData.Values["controller"]) == "SortableGroup" ? "open" : "" )"> 
+                    <a href="@Url.Action("UiSortable", "SortableGroup")">
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span class="title">Sortable Group</span>
+                        </a>
+                    </li><li class='menusection'>Navigation</li>
+                        <li class=""> <a href="javascript:;"> <i class="fa fa-folder-open"></i> <span class="title">Menu Levels</span> <span class="arrow "></span> </a>
+                <ul class="sub-menu">
+                    <li > <a href="javascript:;"> <span class="title">Level 1.1</span> </a> </li>
+                    <li > <a href="javascript:;"> <span class="title">Level 1.2</span> <span class="arrow "></span> </a>
+                        <ul class="sub-menu">
+                            <li > <a href="javascript:;"> <span class="title">Level 2.1</span> </a></li>
+                            <li > <a href="javascript:;"> <span class="title">Level 2.2</span> <span class="arrow "></span></a> 
+                                <ul class="sub-menu">
+                                    <li > <a href="javascript:;"> <span class="title">Level 3.1</span> <span class="arrow "></span></a> 
+                                        <ul class="sub-menu">
+                                            <li > <a href="javascript:;"> <span class="title">Level 4.1</span> </a> </li>
+                                            <li > <a href="javascript:;"> <span class="title">Level 4.2</span> </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li > <a href="javascript:;"> <span class="title">Level 3.2</span> </a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            
+        </ul>
+
+
+    </div>
+    <!-- MAIN MENU - END -->
+
+    <div class="menustats">    
+        <h5>Project Progress</h5>
+        <div class="progress">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                </div>
+            </div>
+        <h5>Target Achieved</h5>
+        <div class="progress">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                </div>
+            </div>
+    </div>
+
+
+
+</div>
+<!--  SIDEBAR - END -->

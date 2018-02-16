@@ -1,124 +1,98 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie9"><![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Material Admin</title>
 
-        <!-- Vendor CSS -->
-        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
-        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
-        <link href="vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
-        
-        <!-- CSS -->
-        <link href="css/app.min.1.css" rel="stylesheet">
-        <link href="css/app.min.2.css" rel="stylesheet"> 
-        
-    </head>
-   <body data-ma-header="teal">
-       <header id="header" class="media">
-            <div class="pull-left h-logo">
-                <a href="index.html" class="hidden-xs">
-                    Wallet   
-                    <small>Money manager</small>
-                </a>
-                
-                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
-                    <div class="mc-wrap">
-                        <div class="mcw-line top palette-White bg"></div>
-                        <div class="mcw-line center palette-White bg"></div>
-                        <div class="mcw-line bottom palette-White bg"></div>
-                    </div>
-                </div>
+<html class="@ViewData["html_class"]">
+<head>
+        <!-- 
+         * Package: Complete Admin - Responsive Theme
+         * Subpackage: Bootstrap
+         * Version: 2.0
+         * This file is part of Complete Admin Theme.
+        -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon" />    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" href="~/images/apple-touch-icon-57-precomposed.png">	<!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/images/apple-touch-icon-114-precomposed.png">    <!-- For iPhone 4 Retina display -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/images/apple-touch-icon-72-precomposed.png">    <!-- For iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/images/apple-touch-icon-144-precomposed.png">    <!-- For iPad Retina display -->
+
+
+
+    <title>@ViewData["Title"] - Complete Admin .NET CORE MVC</title>
+
+    <environment names="Development,Staging,Production">
+        <!-- CORE CSS FRAMEWORK - START -->
+        <!-- <link href="~/lib/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" /> -->
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/lib/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+        <!-- CORE CSS FRAMEWORK - END -->
+ 
+
+        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+        @RenderSection("styles", required: false)
+        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+
+
+        <!-- CORE CSS TEMPLATE - START -->
+        <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/responsive.css" rel="stylesheet" type="text/css" />
+        <!-- CORE CSS TEMPLATE - END -->
+
+    </environment>
+    
+    @*@Html.ApplicationInsightsJavaScript(TelemetryConfiguration)*@
+</head>
+<body class="@ViewData["body_class"]">
+    
+
+    @Html.Partial("_Topbar")
+    @Html.Partial("_Container")
+    @Html.Partial("_Pagehead")
+
+   <!-- <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CompleteAdmin</a>
             </div>
-            <div class="media-body h-search">
-                <form class="p-relative">
-                    <input type="text" class="hs-input" placeholder="">
-                    <i class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
-                </form>
-            </div>
-        </header>
-
-        <section id="main">
-            
-            <aside id="s-main-menu" class="sidebar">
-                <div class="smm-header">
-                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
-                </div>
-
-                <ul class="smm-alerts">
-                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
-                        <i class="zmdi zmdi-email"></i>
-                    </li>
-                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
-                        <i class="zmdi zmdi-notifications"></i>
-                    </li>
-                    <li data-user-alert="sua-tasks" data-ma-action="sidebar-open" data-ma-target="user-alerts">
-                        <i class="zmdi zmdi-view-list-alt"></i>
-                    </li>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
-
-                <ul class="main-menu">
-                    <li class="active">
-                        <a href="/Home"><i class="zmdi zmdi-home"></i> Home</a>
-                    </li>
-                    <li class="active">
-                        <a href="/Wallet"><i class="zmdi zmdi-balance-wallet zmdi-hc-fw"></i> Wallets</a>
-                    </li>
-                </ul>
-            </aside>
-
-            <section id="content">
-            <div class="container">
-                @RenderBody()
-            </div>
-        </section>
-            <footer id="footer">
-                Copyright &copy; 2018 Wallet
-            </footer>
-        </section>
-
-        <!-- Page Loader -->
-        <div class="page-loader palette-Teal bg">
-            <div class="preloader pl-xl pls-white">
-                <svg class="pl-circular" viewBox="25 25 50 50">
-                    <circle class="plc-path" cx="50" cy="50" r="20"/>
-                </svg>
+                @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
+    </div> -->
 
-        <!-- Javascript Libraries -->
-        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
-        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
-        <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-        <script src="vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
-        <script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+    @RenderBody()
 
-        <script src="vendors/bower_components/flot/jquery.flot.js"></script>
-        <script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-        <script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-        <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
-        <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-        <script src="js/flot-charts/curved-line-chart.js"></script>
-        <script src="js/flot-charts/line-chart.js"></script>
+    @Html.Partial("_Footer")
 
-        <!-- Placeholder for IE9 -->
-        <!--[if IE 9 ]>
-        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-        <![endif]-->
+    
 
-        <script src="js/charts.js"></script>
+<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+    @RenderSection("scripts", required: false)
+<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
 
-        <script src="js/functions.js"></script>
-        <script src="js/actions.js"></script>
-        <script src="js/demo.js"></script>
 
-    </body>
-  </html>
+<!-- CORE TEMPLATE JS - START --> 
+<script src="~/js/scripts.js" type="text/javascript"></script> 
+<!-- END CORE TEMPLATE JS - END --> 
+
+</body>
+</html>

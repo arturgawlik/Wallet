@@ -48,7 +48,7 @@ namespace WalletWeb
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
             app.UseAuthentication();
 

@@ -8,7 +8,7 @@
     <PackageId>CompleteAdmin</PackageId>
     <UserSecretsId>aspnet-CompleteAdmin-135cd950-d3cc-487f-987b-d9ff67812eeb</UserSecretsId>
     <RuntimeFrameworkVersion>2.0.0</RuntimeFrameworkVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+
     <StartupObject>WalletWeb.Program</StartupObject>
     <Version>1.0.0</Version>
   </PropertyGroup>

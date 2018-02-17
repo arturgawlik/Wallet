@@ -29,7 +29,7 @@ namespace WalletWeb
 
             //var connection = @"Server=(localdb)\mssqllocaldb;Database=Wallet;Trusted_Connection=True;ConnectRetryCount=0";
             var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Wallet;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            //var connection = "Data Source=localhost;Initial Catalog=Wallet;User ID=SA;Password=<Toshiba321>;";
+            //var connection = "Data Source=localhost;Initial Catalog=Wallet;User ID=SA;Password=<>;";
             services.AddDbContext<WalletContext>(options => options.UseSqlServer(connection));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

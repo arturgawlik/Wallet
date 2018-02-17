@@ -181,7 +181,7 @@ $(document).ready(function() {
             },
 
             submitHandler: function(form) {
-
+                alert("submited")
             }
         });
 
@@ -192,20 +192,21 @@ $(document).ready(function() {
 
 
 
-        //Form Wizard Validations
-        var $validator = $("#commentForm").validate({
+        //Register Wizard Validations
+        var $validator = $("#registerForm").validate({
             rules: {
-                txtFullName: {
+                Password: {
                     required: true,
-                    minlength: 3
+                    minlength: 6
                 },
-                txtEmail: {
+                ConfirmPassword: {
+                    required: true,
+                    minlength: 6,
+                    equalTo: "#txtPassword"
+                },
+                Email: {
                     required: true,
                     email: true,
-                },
-                txtPhone: {
-                    number: true,
-                    required: true,
                 }
             },
             errorPlacement: function(label, element) {
@@ -230,7 +231,7 @@ $(document).ready(function() {
             onNext: function(tab, navigation, index) {
                 console.log('onNext');
                 if ($.isFunction($.fn.validate)) {
-                    var $valid = $("#commentForm").valid();
+                    var $valid = $("#registerForm").valid();
                     if (!$valid) {
                         $validator.focusInvalid();
                         return false;
@@ -247,7 +248,6 @@ $(document).ready(function() {
                 console.log('onLast');
             },
             onTabClick: function(tab, navigation, index) {
-                console.log('onTabClick');
                 //alert('on tab click disabled');
             },
             onTabShow: function(tab, navigation, index) {
@@ -262,8 +262,9 @@ $(document).ready(function() {
         });
 
         $('#pills .finish').click(function() {
-            alert('Finished!, Starting over!');
-            $('#pills').find("a[href*='tab1']").trigger('click');
+            $("#registerForm").valid();
+            var form = $("#registerForm");
+            $("#registerForm").submit();
         });
 
 

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WalletWeb.ViewModels
+namespace WalletWeb.ViewModels.AccessPage
 {
     public class RegisterViewModel
     {

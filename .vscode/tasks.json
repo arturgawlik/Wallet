@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/WalletTest/WalletTest.csproj"
+                "${workspaceFolder}/WalletWeb/WalletWeb.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

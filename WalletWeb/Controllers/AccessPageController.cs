@@ -26,12 +26,6 @@ namespace WalletWeb.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
-
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel viewModel)
         {
@@ -59,6 +53,12 @@ namespace WalletWeb.Controllers
             }
 
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
         }
     }
 }

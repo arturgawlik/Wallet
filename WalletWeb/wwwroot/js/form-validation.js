@@ -197,11 +197,11 @@ $(document).ready(function() {
             rules: {
                 Password: {
                     required: true,
-                    minlength: 6
+                    minlength: 6,
+                    passwordCheck: true
                 },
                 ConfirmPassword: {
                     required: true,
-                    minlength: 6,
                     equalTo: "#txtPassword"
                 },
                 Email: {
@@ -279,3 +279,21 @@ $(document).ready(function() {
 
 
 });
+
+jQuery.validator.addMethod("passwordCheck",
+        function(value, element, param) {
+            if (this.optional(element)) {
+                return true;
+            } else if (!/[A-Z]/.test(value)) {
+                return false;
+            } else if (!/[a-z]/.test(value)) {
+                return false;
+            } else if (!/[0-9]/.test(value)) {
+                return false;
+            } else if (!/[!@#]/.test(value)) {
+                return false;
+            }
+
+            return true;
+        },
+        "Password at least requierd to have one: big letter, small letter, diggit, special character(like '!@#').");

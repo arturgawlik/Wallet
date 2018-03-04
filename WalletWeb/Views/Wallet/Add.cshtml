@@ -1,0 +1,57 @@
+@model WalletWeb.ViewModels.Wallet.WalletViewModel
+@{
+    ViewData["Title"] = "Add Wallet";
+}
+
+<div class="col-lg-12">
+    <section class="box">
+        <header class="panel_header">
+            <h2 class="title pull-left">Define new wallet</h2>  
+        </header>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-md-8 col-sm-9 col-xs-10">
+                    <form asp-action="Add">
+                        <div class="form-group">
+                            <label class="form-label" asp-for="Name"></label>
+                            <div class="controlls">
+                                <input asp-for="Name" class="col-xs-12">
+                                <span class="error" asp-validation-for="Name"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="form-label" asp-for="State"></label>
+                            <div class="controlls">
+                                <input asp-for="State" class="col-xs-12 autoNumeric" data-a-sep="." data-a-dec=",">
+                                <span class="error" asp-validation-for="State"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="submit" style="margin-top:10px;">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@section Styles {
+<environment names="Development">
+
+</environment>
+<environment names="Staging,Production">
+
+</environment>
+}
+
+@section Scripts {
+<environment names="Development">
+<script src="~/lib/autonumeric/autoNumeric-min.js" type="text/javascript"></script>
+</environment>
+<environment names="Staging,Production">
+<script src="~/lib/autonumeric/autoNumeric-min.js" type="text/javascript"></script>
+</environment>
+}

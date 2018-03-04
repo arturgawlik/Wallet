@@ -8,17 +8,21 @@ namespace WalletDomain.Domain
 {
     public class Wallet
     {
-        public Wallet(string name, int userId)
+        public Wallet()
+        {
+        }
+        public Wallet(string name, decimal state, Guid userId)
         {
             Name = name;
             UserId = userId;
+            State = state;
             AllowDebit = WalletSettings.AllowDebit;
         }
 
         public int Id { get; private set; }
         public decimal State { get; private set; }
         public string Name { get; private set; }
-        public int UserId { get; private set; }
+        public Guid UserId { get; private set; }
 
 
         public bool AllowDebit { get; set; }

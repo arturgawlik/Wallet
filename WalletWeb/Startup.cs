@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WalletDomain.DB;
 using WalletDomain.Domain;
+using WalletDomain.Services.Interfaces;
+using WalletDomain.Services.Services;
 
 namespace WalletWeb
 {
@@ -30,11 +32,14 @@ namespace WalletWeb
             //var connection = @"Server=(localdb)\mssqllocaldb;Database=Wallet;Trusted_Connection=True;ConnectRetryCount=0";
             //var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Wallet;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             var connection = "Data Source=localhost;Initial Catalog=Wallet;User ID=SA;Password=<>;";
-            services.AddDbContext<WalletContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<WalletContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("WalletWeb")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<WalletContext>()
                 .AddDefaultTokenProviders();
+
+            //IoC
+            services.AddScoped(typeof(IWalletService), typeof(WalletService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,8 +12,6 @@ namespace WalletDomain.DB
         public WalletContext(DbContextOptions<WalletContext> options) : base(options)
         {
         }
-
-        public new DbSet<User> Users { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
     }
 }

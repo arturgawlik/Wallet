@@ -12,7 +12,7 @@ namespace WalletDomain.Services.Interfaces
         void Add(int walletId, decimal amount);
         void Substract(int walletId, decimal deciaml);
         void OverrideDebitOption(int walletId, bool allowDebit);
-        IList<Wallet> GetWalletsByUserId(int userId);
+        IList<Wallet> GetWalletsByUserId(Guid userId);
         Wallet GetWalletById(int id);
     }
 }

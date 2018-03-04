@@ -71,7 +71,7 @@ namespace WalletDomain.Services.Services
             return _context.Wallets.Where(w => w.Id == id).ToList().FirstOrDefault();
         }
 
-        public IList<Wallet> GetWalletsByUserId(int userId)
+        public IList<Wallet> GetWalletsByUserId(Guid userId)
         {
             return _context.Wallets.Where(w => w.UserId == userId).ToList();
         }

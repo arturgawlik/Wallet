@@ -23,12 +23,13 @@
                         <div class="form-group">
                             <label class="form-label" asp-for="State"></label>
                             <div class="controlls">
-                                <input asp-for="State" class="col-xs-12 autoNumeric" data-a-sep="." data-a-dec=",">
+                                <input asp-for="State" class="col-xs-12 autoNumeric" data-a-sep=" " data-a-dec=".">
                                 <span class="error" asp-validation-for="State"></span>
                             </div>
                         </div>
                         <div>
                             <button class="btn btn-primary" type="submit" style="margin-top:10px;">Save</button>
+                            <a class="btn btn-primary" asp-action="Index" style="margin-top:10px;">Back</a>
                         </div>
                     </form>
                 </div>

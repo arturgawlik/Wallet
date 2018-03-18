@@ -1,17 +1,17 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using WalletDomain.DB;
 using WalletDomain.Domain;
 using WalletDomain.Exceptions;
 using WalletDomain.Services.Interfaces;
+using WalletInfrastructure.DB;
 
-namespace WalletDomain.Services.Services
+namespace WalletInfrastructure.Repository
 {
     public class WalletService : IWalletService
     {
         private readonly WalletContext _context;
+        
         public WalletService(WalletContext context)
         {
             _context = context;
@@ -48,14 +48,14 @@ namespace WalletDomain.Services.Services
             return createdWallet.Entity;
         }
 
-        public void Delete(int Id)
+        public void Delete(int id)
         {
-            if (Id <= 0)
+            if (id <= 0)
             {
-                throw new WalletException($"Id is equal: {Id}, when it can not be smaller or equal to zero.");
+                throw new WalletException($"Id is equal: {id}, when it can not be smaller or equal to zero.");
             }
 
-            var wallet = _context.Wallets.FirstOrDefault(w => w.Id == Id);
+            var wallet = _context.Wallets.FirstOrDefault(w => w.Id == id);
 
             if (wallet == null)
             {
@@ -76,7 +76,7 @@ namespace WalletDomain.Services.Services
             return _context.Wallets;
         }
 
-        public IList<Wallet> GetWalletsByUserId(Guid userId)
+        public IEnumerable<Wallet> GetWalletsByUserId(Guid userId)
         {
             return _context.Wallets.Where(w => w.UserId == userId).ToList();
         }

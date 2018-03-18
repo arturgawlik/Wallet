@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using WalletDomain.Domain;
+using WalletInfrastructure.AbstractionImplementation;
 
-namespace WalletDomain.DB
+namespace WalletInfrastructure.DB
 {
     public class WalletContext : IdentityDbContext<ApplicationUser>
     {

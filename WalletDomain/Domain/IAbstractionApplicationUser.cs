@@ -1,7 +1,6 @@
 ﻿namespace WalletDomain.Domain
 {
-    public class Contact
+    public interface IAbstractionApplicationUser
     {
-
     }
 }

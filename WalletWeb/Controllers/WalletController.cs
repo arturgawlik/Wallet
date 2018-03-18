@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WalletDomain.Domain;
 using WalletDomain.Services.Interfaces;
+using WalletInfrastructure.AbstractionImplementation;
 using WalletWeb.ViewModels.Wallet;
 
 namespace WalletWeb.Controllers
@@ -12,29 +13,29 @@ namespace WalletWeb.Controllers
     [Authorize]
     public class WalletController : Controller
     {
-        private readonly IWalletService walletService;
-        private readonly UserManager<ApplicationUser> applicationUser;
+        private readonly IWalletService _walletService;
+        private readonly UserManager<ApplicationUser> _applicationUser;
 
         public WalletController(IWalletService walletService, UserManager<ApplicationUser> applicationUser)
         {
-            this.applicationUser = applicationUser;
-            this.walletService = walletService;
-
+            this._applicationUser = applicationUser;
+            this._walletService = walletService;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
             var viewModel = new HomeWalletViewModel();
-            var currentUserId = Guid.Parse(applicationUser.GetUserId(User));
-            var wallets = walletService.GetWalletsByUserId(currentUserId);
+            var currentUserId = Guid.Parse(_applicationUser.GetUserId(User));
+            var wallets = _walletService.GetWalletsByUserId(currentUserId);
 
             var walletsViewModelList = (from w in wallets
                                         select new WalletViewModel()
                                         {
+                                            Id = w.Id,
                                             Name = w.Name,
                                             State = w.State
-                                        }).ToList();
+                                        }).OrderByDescending(x => x.Id).ToList();
             viewModel.Wallets = walletsViewModelList;
 
             return View(viewModel);
@@ -53,8 +54,8 @@ namespace WalletWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var wallet = new Wallet(viewModel.Name, viewModel.State.Value, Guid.Parse(applicationUser.GetUserId(User)));
-                walletService.Create(wallet);
+                var wallet = new Wallet(viewModel.Name, viewModel.State.Value, Guid.Parse(_applicationUser.GetUserId(User)));
+                _walletService.Create(wallet);
 
                 return RedirectToAction("Index");
             }

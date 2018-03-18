@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WalletDomain\WalletDomain.csproj" />
+    <ProjectReference Include="..\WalletInfrastructure\WalletInfrastructure.csproj">
+      <Project>{240BD594-2E0F-4B5E-AE06-02A0D4DAFE04}</Project>
+      <Name>WalletInfrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

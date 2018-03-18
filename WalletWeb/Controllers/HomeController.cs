@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,6 +18,7 @@ namespace WalletWeb.Controllers
             _walletService = walletService;
         }
         
+        [HttpGet]
         public IActionResult Index()
         {
             var viewModel = generateHomeAgregateViewModel();
@@ -34,9 +33,34 @@ namespace WalletWeb.Controllers
                 UpdateOutgoings = initUpdateWalletState(false),
                 UpdateRevenues = initUpdateWalletState(true)
             };
+            
             return viewModel;
         }
 
+        [HttpPost]
+        public IActionResult AddMoney(HomeAgregateViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (viewModel.UpdateRevenues.WalletId.HasValue)
+                {
+                    var wallet = _walletService.GetWalletById(viewModel.UpdateRevenues.WalletId.Value);
+                    wallet.Add(viewModel.UpdateRevenues.Change);
+                }
+                else
+                { 
+                    ModelState.AddModelError(null, "You need to specyfy wallet!");
+                }
+            }
+
+            return View("Index", viewModel);
+        }
+        
+        [HttpPost]
+        public IActionResult SubstractMoney(HomeAgregateViewModel viewModel)
+        {
+            return null;
+        }
 
         private UpdateWalletStateViewModel initUpdateWalletState(bool isIncome)
         {
@@ -47,6 +71,8 @@ namespace WalletWeb.Controllers
                 WalletId = null,
                 WalletSelectListItems = initWalletList()
             };
+
+            return updateWalletStateViewModel;
         }
 
         private List<SelectListItem> initWalletList()
@@ -56,7 +82,9 @@ namespace WalletWeb.Controllers
                 {
                     Text = w.Name,
                     Value = w.Id.ToString()
-                });
+                }).ToList();
+
+            return result;
         }
     }
 }

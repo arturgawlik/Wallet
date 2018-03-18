@@ -6,19 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using WalletWeb.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using WalletDomain.Domain;
+using WalletInfrastructure.AbstractionImplementation;
 using WalletWeb.ViewModels.AccessPage;
 
 namespace WalletWeb.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<ApplicationUser> userManager;
-        private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
-            this.signInManager = signInManager;
-            this.userManager = userManager;
+            this._signInManager = signInManager;
+            this._userManager = userManager;
         }
 
         [HttpGet]
@@ -26,7 +27,7 @@ namespace WalletWeb.Controllers
         {
             return View();
         }
-
+ 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel viewModel)
         {
@@ -38,11 +39,11 @@ namespace WalletWeb.Controllers
                     Email = viewModel.Email
                 };
 
-                var result = await userManager.CreateAsync(user, viewModel.Password);
+                var result = await _userManager.CreateAsync(user, viewModel.Password);
 
                 if (result.Succeeded)
                 {
-                    await signInManager.SignInAsync(user, false);
+                    await _signInManager.SignInAsync(user, false);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -67,7 +68,7 @@ namespace WalletWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");

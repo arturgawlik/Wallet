@@ -16,15 +16,62 @@
     ViewData["chatapiwindows_class"] = "";
 }
 
-<div class="col-lg-12">
+<div class="col-xs-12 col-md-6 col-lg-6">
     <section class="box">
         <header class="panel_header">
-            <h2 class="title pull-left">Update State</h2>  
+            <h2 class="title pull-left">Add income</h2>  
         </header>
         <div class="content-body">
             <div class="row">
-                <div class="col-md-8 col-sm-9 col-xs-10">
-                    
+                <div class="col-xs-12">
+                    <form asp-action="AddMoney">
+                        <div class="form-group">
+                            <label class="form-label" asp-for="UpdateRevenues.Change"></label>
+                            <div class="controlls">
+                                <input asp-for="UpdateRevenues.Change" class="col-xs-12 autoNumeric" data-a-sep=" " data-a-dec=".">
+                                <span class="error" asp-validation-for="UpdateRevenues.Change"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" asp-for="UpdateRevenues.WalletId"></label>
+                            <div class="controlls">
+                                @Html.DropDownListFor(m => m.UpdateRevenues.WalletId, Model.UpdateRevenues.WalletSelectListItems)
+                                <span class="error" asp-validation-for="UpdateRevenues.WalletId"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="col-xs-12 col-md-6 col-lg-6">
+    <section class="box">
+        <header class="panel_header">
+            <h2 class="title pull-left">Add outgoings</h2>  
+        </header>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form asp-action="SubstractMoney">
+                        <div class="form-group">
+                            <label class="form-label" asp-for="UpdateOutgoings.Change"></label>
+                            <div class="controlls">
+                                <input asp-for="UpdateOutgoings.Change" class="col-xs-12 autoNumeric" data-a-sep=" " data-a-dec=".">
+                                <span class="error" asp-validation-for="UpdateOutgoings.Change"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" asp-for="UpdateOutgoings.WalletId"></label>
+                            <div class="controlls">
+                                @Html.DropDownListFor(m => m.UpdateOutgoings.WalletId, Model.UpdateOutgoings.WalletSelectListItems)
+                                <span class="error" asp-validation-for="UpdateOutgoings.WalletId"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </form>
                 </div>
             </div>
         </div>

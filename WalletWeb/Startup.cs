@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WalletDomain.DB;
 using WalletDomain.Domain;
 using WalletDomain.Services.Interfaces;
-using WalletDomain.Services.Services;
+using WalletInfrastructure.AbstractionImplementation;
+using WalletInfrastructure.DB;
+using WalletInfrastructure.Repository;
 
 namespace WalletWeb
 {
@@ -22,7 +19,7 @@ namespace WalletWeb
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -31,7 +28,7 @@ namespace WalletWeb
 
             //var connection = @"Server=(localdb)\mssqllocaldb;Database=Wallet;Trusted_Connection=True;ConnectRetryCount=0";
             //var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Wallet;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            var connection = "Data Source=localhost;Initial Catalog=Wallet;User ID=SA;Password=<Toshiba321>;";
+            const string connection = "Data Source=localhost;Initial Catalog=Wallet;User ID=SA;Password=<Toshiba321>;";
             services.AddDbContext<WalletContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("WalletWeb")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

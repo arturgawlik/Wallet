@@ -9,11 +9,11 @@ namespace WalletDomain.Services.Interfaces
     public interface IWalletService
     {
         Wallet Create(Wallet wallet);
-        void Delete(int Id);
+        void Delete(int id);
         void Add(int walletId, decimal amount);
         void Substract(int walletId, decimal deciaml);
         void OverrideDebitOption(int walletId, bool allowDebit);
-        IList<Wallet> GetWalletsByUserId(Guid userId);
+        IEnumerable<Wallet> GetWalletsByUserId(Guid userId);
         Wallet GetWalletById(int id);
         IEnumerable<Wallet> GetAll();
     }

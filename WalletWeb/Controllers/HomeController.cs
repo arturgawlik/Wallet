@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WalletDomain.Services.Interfaces;
+using WalletWeb.Controllers.Base;
 using WalletWeb.ViewModels.Home;
 
 namespace WalletWeb.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IWalletService _walletService;
 
@@ -48,7 +48,7 @@ namespace WalletWeb.Controllers
                     wallet.Add(viewModel.UpdateRevenues.Change);
                 }
                 else
-                { 
+                {  
                     ModelState.AddModelError(null, "You need to specyfy wallet!");
                 }
             }

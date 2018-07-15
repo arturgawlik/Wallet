@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletTest", "WalletTest\WalletTest.csproj", "{B6932069-6F37-4A2B-BF9B-0CEEF57B263D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletTest", "WalletTest\WalletTest.csproj", "{B6932069-6F37-4A2B-BF9B-0CEEF57B263D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletDomain", "WalletDomain\WalletDomain.csproj", "{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletDomain", "WalletDomain\WalletDomain.csproj", "{3641723B-6FFA-4266-BEAF-CDDA8EB85B81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletWeb", "WalletWeb\WalletWeb.csproj", "{EBE45A3C-A8BD-4885-84B8-96558578EBAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletWeb", "WalletWeb\WalletWeb.csproj", "{EBE45A3C-A8BD-4885-84B8-96558578EBAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletInfrastructure", "WalletInfrastructure\WalletInfrastructure.csproj", "{240BD594-2E0F-4B5E-AE06-02A0D4DAFE04}"
 EndProject

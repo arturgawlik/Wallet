@@ -59,7 +59,7 @@ namespace WalletWeb.Controllers
         [HttpPost]
         public IActionResult SubstractMoney(HomeAgregateViewModel viewModel)
         {
-            return null;
+            return Json("gg");
         }
 
         private UpdateWalletStateViewModel initUpdateWalletState(bool isIncome)

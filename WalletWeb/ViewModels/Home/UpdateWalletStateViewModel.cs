@@ -9,7 +9,7 @@ namespace WalletWeb.ViewModels.Home
 
         public bool IsPositive { get; set; }
 
-        public int? WalletId { get; set; }
+        public  ? WalletId { get; set; }
 
         public List<SelectListItem> WalletSelectListItems { get; set; }
     }

@@ -79,5 +79,12 @@ namespace WalletWeb.Controllers
 
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            
+            return RedirectToAction("Login", "Account");
+        }
     }
 }
